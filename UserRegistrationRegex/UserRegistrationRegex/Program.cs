@@ -5,7 +5,7 @@ namespace UserRegistrationRegex
     {
         static void Main(string[] args)
         {
-            String firstName, lastName, Email,mobileNo;
+            String firstName, lastName, Email,mobileNo,password;
             Console.WriteLine("Enter First Name");
             firstName = Console.ReadLine();
             UserRegPattern pattern = new UserRegPattern();
@@ -23,7 +23,10 @@ namespace UserRegistrationRegex
             mobileNo = Console.ReadLine();
             bool result4 = pattern.ValidatemobileNo(mobileNo);
             Console.WriteLine("Validation Check for mobileNo :" + result4);
-
+            Console.WriteLine("Enter Passoword");
+            password = Console.ReadLine();
+            bool result5 = pattern.ValidatePassword(password);
+            Console.WriteLine("Validation for password :" + result5);
         }
     }
 }
