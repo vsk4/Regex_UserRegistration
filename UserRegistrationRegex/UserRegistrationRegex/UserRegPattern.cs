@@ -5,24 +5,23 @@ namespace UserRegistrationRegex
 {
     class UserRegPattern
     {
-        string firstNameRegex = "[A-Z]{1}[A-Za-z]{2,}";
-        string lastNameRegex = "[A-Z]{1}[A-Za-z]{2,}";
+        string nameRegex = "^[A-Z]{1}[A-Za-z]{2,}$";
         string emailRegex = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*[@][0-9a-zA-Z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
-        string mobileRegex = "[1-9]{1}[0-9]{1,2}[ ]{1}[6-9]{1}[0-9]{9}";
-        string passwordRegex = "(?=.*?[._+-@#&*$])(?=.*[A-Z])(?=.*[0-9])([0-9a-zA-z]{7,})";
+        string mobileRegex = "^[1-9]{1}[0-9]{1,2}[ ]{1}[6-9]{1}[0-9]{9}$";
+        string passwordRegex = "^(?=.*?[._+-@#&*$])(?=.*[A-Z])(?=.*[0-9])([0-9a-zA-z]{8,})$";
         public bool ValidateFirstName(string firstName)
         {
-            return Regex.IsMatch(firstName, firstNameRegex);
+            return Regex.IsMatch(firstName, nameRegex);
         }
         public bool ValidateLastName(string lastName)
         {
-            return Regex.IsMatch(lastName, firstNameRegex);
+            return Regex.IsMatch(lastName, nameRegex);
         }
-        public bool ValidateEmail(string Email)
+        public bool ValidateEmail(string email)
         {
-            return Regex.IsMatch(Email, emailRegex);
+            return Regex.IsMatch(email, emailRegex);
         }
-        public bool ValidatemobileNo(string mobileNo)
+        public bool ValidateMobile(string mobileNo)
         {
             return Regex.IsMatch(mobileNo, mobileRegex);
         }
